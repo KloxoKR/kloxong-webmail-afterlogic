@@ -46,9 +46,9 @@ sed -i "s:settings.xml':settings.xml.php':" $RPM_BUILD_ROOT/home/kloxo/httpd/web
 %{__mkdir} -p -m0755 $RPM_BUILD_ROOT%{kloxo}/%{packagename}
 %{__cp} -rp * $RPM_BUILD_ROOT%{kloxo}/%{packagename}
 
-install -D -m 755 $RPM_SOURCE_DIR/afterlogic_settings.xml.php $RPM_BUILD_ROOT/home/kloxo/httpd/webmail/afterlogic/data/settings/afterlogic_settings.xml.php
-install -D -m 755 $RPM_SOURCE_DIR/afterlogic_initial.sql $RPM_BUILD_ROOT/home/kloxo/httpd/webmail/afterlogic/data/settings/afterlogic_initial.sql
-install -D -m 755 $RPM_SOURCE_DIR/afterlogic_inc_settings_path.php $RPM_BUILD_ROOT/home/kloxo/httpd/webmail/afterlogic/inc_settings_path.php
+install -D -m 755 %{buildroot}/afterlogic_settings.xml.php $RPM_BUILD_ROOT/home/kloxo/httpd/webmail/afterlogic/data/settings/afterlogic_settings.xml.php
+install -D -m 755 %{buildroot}/afterlogic_initial.sql $RPM_BUILD_ROOT/home/kloxo/httpd/webmail/afterlogic/data/settings/afterlogic_initial.sql
+install -D -m 755 %{buildroot}/afterlogic_inc_settings_path.php $RPM_BUILD_ROOT/home/kloxo/httpd/webmail/afterlogic/inc_settings_path.php
 
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
@@ -64,7 +64,7 @@ install -D -m 755 $RPM_SOURCE_DIR/afterlogic_inc_settings_path.php $RPM_BUILD_RO
 - change product name to kloxong
 - add obsolete for kloxomr 
 
-* Sun May 01 2017 Mustafa Ramadhan <mustafa@bigraf.com> - 7.7.2-1.mr
+* Mon May 01 2017 Mustafa Ramadhan <mustafa@bigraf.com> - 7.7.2-1.mr
 - update to 7.7.2
 
 * Tue Mar 01 2016 Mustafa Ramadhan <mustafa@bigraf.com> - 7.6.7-1.mr
@@ -80,7 +80,7 @@ install -D -m 755 $RPM_SOURCE_DIR/afterlogic_inc_settings_path.php $RPM_BUILD_RO
 * Wed Apr 29 2015 Mustafa Ramadhan <mustafa@bigraf.com> - 7.6.0-3.mr
 - update to 7.6.0
 
-* Tue Apr 26 2015 Mustafa Ramadhan <mustafa@bigraf.com> - 7.5.0-3.mr
+* Sun Apr 26 2015 Mustafa Ramadhan <mustafa@bigraf.com> - 7.5.0-3.mr
 - change settings.xml to settings.xml.php for security reason
 
 * Tue Apr 14 2015 Mustafa Ramadhan <mustafa@bigraf.com> - 7.5.0-1.mr
